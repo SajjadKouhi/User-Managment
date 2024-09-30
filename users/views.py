@@ -119,10 +119,7 @@ class EditLeaveView(generics.RetrieveUpdateDestroyAPIView) :
         return obj
     
 class ShowPayslipView (APIView) : 
-    # serializer_class = PayslipSerializer
     permission_classes = [permissions.IsAuthenticated]
-    # def get_object(self):
-    #     return self.request.user
     def get(self , request) :
         user = request.user
         serializer= PayslipSerializer(user)
